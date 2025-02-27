@@ -11,7 +11,9 @@
 GET https://server:port/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder('1')?$format=json
 Authorization: Basic {{username}}:{{password}}
 X-CSRF-Token: Fetch
+```
 
+```http
 # Create Sales Order
 POST https://server:port/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder
 Content-Type: application/json
