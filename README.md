@@ -1,5 +1,5 @@
 # 'Order to Cash' process
-This documentation outlines some basic steps in the Order to Cash process (inspired by [this](https://community.sap.com/t5/enterprise-resource-planning-blogs-by-sap/step-by-step-to-run-a-simple-order-to-cash-process/ba-p/13439388 guide)). The goal is to get you started with the relevant SAP OData Calls, but then also to provide you with samples that you can import in Power Automate and Copilot Studio to quickly get you started!
+This documentation outlines some basic steps in the Order to Cash process (inspired by [this](https://community.sap.com/t5/enterprise-resource-planning-blogs-by-sap/step-by-step-to-run-a-simple-order-to-cash-process/ba-p/13439388) guide). The goal is to get you started with the relevant SAP OData Calls, but then also to provide you with samples that you can import in Power Automate and Copilot Studio to quickly get you started!
 
 
 ## Create Sales Order (VA01)
