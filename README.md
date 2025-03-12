@@ -96,6 +96,15 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 
 ```
 
+```http
+# Post goods issue for outbound delivery
+POST https://server:port/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/PostGoodsIssue?DeliveryDocument='1'
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+```
+
 ## Billing The Sales Order (VF01)
 
 ## Release Billing Document to FI Accounting (VF02)
