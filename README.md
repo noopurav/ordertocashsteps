@@ -60,6 +60,42 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 
 ## Deliver the goods (VL01N)
 
+### OData Service
+Information on SAP API Business Hub: [Outbound Delivery (A2X)](https://api.sap.com/api/API_OUTBOUND_DELIVERY_SRV_0002/overview)
+
+* https://{host}:{port}/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV
+
+#### Sample Payload:
+```http
+# Fetch Sales Order "1! and 
+# fetch X-CSRF-Token used for outbound delivery
+# @name FetchReply
+GET https://server:port/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/A_OutbDeliveryHeader
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+```
+
+```http
+# Create Outbound delivieries with reference to preceding document.
+POST https://server:port/sap/opu/odata/sap/API_OUTBOUND_DELIVERY_SRV/A_OutbDeliveryHeader
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+
+
+  "to_DeliveryDocumentItem": {
+    "results": [
+      {
+        "ReferenceSDDocument": "0005200000"
+      }
+    ]
+  }
+}
+
+```
+
 ## Billing The Sales Order (VF01)
 
 ## Release Billing Document to FI Accounting (VF02)
