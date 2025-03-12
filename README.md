@@ -104,7 +104,6 @@ Authorization: Basic {{username}}:{{password}}
 X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 
 ```
-
 ## Billing The Sales Order (VF01)
 
 ## Release Billing Document to FI Accounting (VF02)
