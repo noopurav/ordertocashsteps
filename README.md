@@ -67,3 +67,28 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ## Check The Invoice (FB03)
 
 ## Process Incoming Payment (F-28)
+
+## Manage Journal Entries – New Version
+
+## Manage Purchase Orders (Version 2)
+
+## Purchase Order (Version 2)
+
+## Manage Sales Orders (Version 2)
+
+## Manage Sales Contracts (Version 2)
+
+## ## Manage Customer Returns (Version 2)
+
+## Manage Credit Memo Requests (Version 2)
+
+## Manage Debit Memo Requests (Version 2)
+
+## ## Project Control – Enterprise Projects
+
+## Manage Project Billing – Project Billing Request
+
+## Manage Product Master Data
+
+## Manage Customer Master Data
+
