@@ -106,7 +106,57 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ```
 ## Billing The Sales Order (VF01)
 
+### OData Service
+Information on SAP API Business Hub: [Billing Document (A2X)](https://api.sap.com/api/sap-s4-CE_BILLINGDOCUMENT_0001-v1/overview)
+
+* https://{host}:{port}/sap/opu/odata4/sap/api_billingdocument/srvd_a2x/sap/billingdocument/0001/BillingDocument
+
+#### Sample Payload:
+```http
+# Fetch Sales Order "1! and 
+# fetch X-CSRF-Token used for billing document
+# @name FetchReply
+GET https://{host}:{port}/sap/opu/odata4/sap/api_billingdocument/srvd_a2x/sap/billingdocument/0001/BillingDocument/BillingDocument
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+```
+
+
+```http
+# Invoke action CreateFromSDDocument
+POST https://{host}:{port}/sap/opu/odata4/sap/api_billingdocument/srvd_a2x/sap/billingdocument/0001/BillingDocument/SAP__self.CreateFromSDDocument
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+  "_Control": {
+    "DefaultBillingDocumentDate": "2025-03-31",
+    "DefaultBillingDocumentType": "F2",
+    "AutomPostingToAcctgIsDisabled": false
+  },
+  "_Reference": [
+    {
+      "SDDocument": "818279",
+      "BillingDocumentType": "F2",
+      "BillingDocumentDate": "2025-03-31",
+      "DestinationCountry": "DE",
+      "SalesOrganization": "1010",
+      "SDDocumentCategory": "OR"
+    }
+  ]
+}
+
 ## Release Billing Document to FI Accounting (VF02)
+
+Information on SAP API Business Hub: [Billing Document (A2X)](https://api.sap.com/api/sap-s4-CE_BILLINGDOCUMENT_0001-v1/overview)
+#Invoke action PostToAccounting
+POST https://{host}:{port}/sap/opu/odata4/sap/api_billingdocument/srvd_a2x/sap/billingdocument/0001/BillingDocument/:BillingDocument/SAP__self.PostToAccounting
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+ParameterL BillingDocument: {{Billing Document Number }}
+
 
 ## Check The Invoice (FB03)
 
