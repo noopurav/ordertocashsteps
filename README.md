@@ -151,15 +151,19 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ```
 
 ## Release Billing Document to FI Accounting (VF02)
-```http
+
 Information on SAP API Business Hub: [Billing Document (A2X)](https://api.sap.com/api/sap-s4-CE_BILLINGDOCUMENT_0001-v1/overview)
+
+```http
+
 #Invoke action PostToAccounting
 POST https://{host}:{port}/sap/opu/odata4/sap/api_billingdocument/srvd_a2x/sap/billingdocument/0001/BillingDocument/:BillingDocument/SAP__self.PostToAccounting
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 Parameter:  BillingDocument: {{Billing Document Number }}
-'''
+
+```
 
 ## Check The Invoice (FB03)
 
