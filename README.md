@@ -169,13 +169,20 @@ Parameter:  BillingDocument: {{Billing Document Number }}
 
 ## Process Incoming Payment (F-28)
 
-## Manage Journal Entries – New Version
-
+# 'Procure to Pay' process
+## Create Purchase Requisition
+## Vendor Selection
+## Create Purchase Order
+## Good Receipt 
 ## Manage Purchase Orders (Version 2)
 
 ## Purchase Order (Version 2)
 
+## Manage Journal Entries – New Version
+
 ## Manage Sales Orders (Version 2)
+
+## Manage Project Billing – Project Billing Request
 
 ## Manage Sales Contracts (Version 2)
 
@@ -187,7 +194,7 @@ Parameter:  BillingDocument: {{Billing Document Number }}
 
 ## ## Project Control – Enterprise Projects
 
-## Manage Project Billing – Project Billing Request
+
 
 ## Manage Product Master Data
 
