@@ -170,13 +170,64 @@ Parameter:  BillingDocument: {{Billing Document Number }}
 ## Process Incoming Payment (F-28)
 
 # 'Procure to Pay' process
-## Create Purchase Requisition
-## Vendor Selection
-## Create Purchase Order
-## Good Receipt 
-## Manage Purchase Orders (Version 2)
 
-## Purchase Order (Version 2)
+## Create Purchase Order
+### OData Service
+Information on SAP API Business Hub: [Purchase Order](https://api.sap.com/api/API_PURCHASEORDER_PROCESS_SRV/overview)
+
+* https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEORDER_PROCESS_SRV/A_PurchaseOrder
+
+#### Sample Payload:
+```http
+# Fetch Pruchase Order "1! and 
+# fetch X-CSRF-Token used for Purchase order
+# @name FetchReply
+GET  https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEORDER_PROCESS_SRV/A_PurchaseOrder('4500003601')
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+
+```
+
+
+```http
+# Creates a new purchase order
+POST https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEORDER_PROCESS_SRV/A_PurchaseOrder
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+  "CompanyCode": "1010",
+  "PurchasingOrganization": "1010",
+  "PurchasingGroup": "001",
+  "Supplier": "10300001",
+  "PurchaseOrderType": "NB",
+  "Language": "EN",
+  "PaymentTerms": "",
+  "DocumentCurrency": "USD",
+  "to_PurchaseOrderItem": {
+    "results": [
+      {
+        "PurchaseOrder": "",
+        "PurchaseOrderItem": "1",
+        "PurchaseOrderItemText": "Test",
+        "Material": "TG12",
+        "Plant": "1010",
+        "StorageLocation": "",
+        "MaterialGroup": "",
+        "PurchasingInfoRecord": "",
+        "SupplierMaterialNumber": "",
+        "OrderQuantity": "10",
+        "PurchaseOrderQuantityUnit": "PC"
+      }
+    ]
+  }
+}
+
+```
+
+## Good Receipt 
+
 
 ## Manage Journal Entries – New Version
 
@@ -193,6 +244,11 @@ Parameter:  BillingDocument: {{Billing Document Number }}
 ## Manage Debit Memo Requests (Version 2)
 
 ## ## Project Control – Enterprise Projects
+## Create Purchase Requisition
+## Vendor Selection
+## Manage Purchase Orders (Version 2)
+
+## Purchase Order (Version 2)
 
 
 
