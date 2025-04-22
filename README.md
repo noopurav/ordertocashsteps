@@ -225,13 +225,15 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 }
 
 ```
+##  Purchase Requisition
 
-## Good Receipt 
+## Vendor Selection
 
+## Manage Product Master Data
+
+## Manage Customer Master Data
 
 ## Manage Journal Entries – New Version
-
-## Manage Sales Orders (Version 2)
 
 ## Manage Project Billing – Project Billing Request
 
@@ -244,15 +246,12 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ## Manage Debit Memo Requests (Version 2)
 
 ## ## Project Control – Enterprise Projects
-## Create Purchase Requisition
-## Vendor Selection
-## Manage Purchase Orders (Version 2)
-
-## Purchase Order (Version 2)
 
 
 
-## Manage Product Master Data
+( for manage add delete, update?)
 
-## Manage Customer Master Data
+
+
+
 
