@@ -285,7 +285,7 @@ Information on SAP API Business Hub: [Product Master](https://api.sap.com/api/AP
 # Fetch Product "1! and 
 # fetch X-CSRF-Token used for Product Master Record
 # @name FetchReply
-GET  https://{host}:{port}/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product(TEST123BIKE)
+GET  https://{host}:{port}/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product('TEST123BIKE')
 Authorization: Basic {{username}}:{{password}}
 X-CSRF-Token: Fetch
 
@@ -294,7 +294,7 @@ X-CSRF-Token: Fetch
 
 ```http
 # Creates Product Master Record
-POST https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEREQ_PROCESS_SRV/A_PurchaseRequisitionHeader
+POST https://{host}:{port}/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
@@ -324,6 +324,60 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ```
 
 ## Manage Customer Master Data
+
+### OData Service
+Information on SAP API Business Hub: [Buisness Partner](https://api.sap.com/api/API_BUSINESS_PARTNER/overview)
+
+* https://{host}:{port}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner
+#### Sample Payload:
+```http
+# Fetch Buisness Partner "1! and 
+# fetch X-CSRF-Token used for Product Master Record
+# @name FetchReply
+GET  https://microsoftintegrationdemo.com:44301/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$filter=BusinessPartnerCategory eq '2'
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+
+```
+
+
+```http
+# Creates a new buisness partner Record
+POST https://{host}:{port}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+  "BusinessPartnerCategory": "2", // 1 for Person, 2 for Organization, 3 for Group
+  "BusinessPartnerFullName": "Roadkings Sports Inc.",
+  "OrganizationBPName1": "Roadkings Sports Inc.",
+  "FirstName": "John",
+  "LastName": "Doe",
+  "to_BusinessPartnerAddress": {
+    "results": [
+      {
+        "BusinessPartner": "John Doe",
+        "AddressID": "1",
+        "StreetName": "123 Main St",
+        "CityName": "Redmond",
+        "PostalCode": "98052",
+        "Country": "US"
+      }
+    ]
+  },
+  "to_BusinessPartnerRole": {
+    "results": [
+      {
+        "BusinessPartner": "John Doe",
+        "BusinessPartnerRole": "FLCU00",
+        "AuthorizationGroup": ""
+      }
+    ]
+  }
+}
+
+```
 
 ## Manage Journal Entries – New Version
 
