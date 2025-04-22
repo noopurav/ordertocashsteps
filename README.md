@@ -227,6 +227,51 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ```
 ##  Purchase Requisition
 
+### OData Service
+Information on SAP API Business Hub: [Purchase Requisition](https://api.sap.com/api/OP_API_PURCHASEREQ_PROCESS_SRV_0001/overview)
+
+* https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEREQ_PROCESS_SRV/A_PurchaseRequisitionHeader
+#### Sample Payload:
+```http
+# Fetch Pruchase Order "1! and 
+# fetch X-CSRF-Token used for Purchase order
+# @name FetchReply
+GET  https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEREQ_PROCESS_SRV/A_PurchaseRequisitionHeader('10001753')
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+
+```
+
+
+```http
+# Creates a new purchase order
+POST https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEREQ_PROCESS_SRV/A_PurchaseRequisitionHeader
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+{
+
+  "PurchaseRequisitionType": "NB",
+  "to_PurchaseReqnItem": [
+    {
+      "PurchaseRequisition": "",
+      "PurchaseRequisitionItem": "1",
+      "PurchaseRequisitionItemText": "Test",
+      "Material": "TG12",
+      "Plant": "1010",
+      "StorageLocation": "",
+      "MaterialGroup": "",
+      "PurchasingInfoRecord": "",
+      "SupplierMaterialNumber": "",
+      "RequestedQuantity": "10",
+      "BaseUnit": "PC"
+    }
+  ]
+}
+
+```
+
+
 ## Vendor Selection
 
 ## Manage Product Master Data
