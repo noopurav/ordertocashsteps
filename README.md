@@ -179,7 +179,7 @@ Information on SAP API Business Hub: [Purchase Order](https://api.sap.com/api/AP
 
 #### Sample Payload:
 ```http
-# Fetch Pruchase Order "1! and 
+# Fetch Purchase Order "1! and 
 # fetch X-CSRF-Token used for Purchase order
 # @name FetchReply
 GET  https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEORDER_PROCESS_SRV/A_PurchaseOrder('4500003601')
@@ -190,7 +190,7 @@ X-CSRF-Token: Fetch
 
 
 ```http
-# Creates a new purchase order
+# Creates a new Purchase Order
 POST https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEORDER_PROCESS_SRV/A_PurchaseOrder
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
@@ -233,7 +233,7 @@ Information on SAP API Business Hub: [Purchase Requisition](https://api.sap.com/
 * https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEREQ_PROCESS_SRV/A_PurchaseRequisitionHeader
 #### Sample Payload:
 ```http
-# Fetch Pruchase Order "1! and 
+# Fetch Purchase Requisition "1! and 
 # fetch X-CSRF-Token used for Purchase order
 # @name FetchReply
 GET  https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEREQ_PROCESS_SRV/A_PurchaseRequisitionHeader('10001753')
@@ -244,7 +244,7 @@ X-CSRF-Token: Fetch
 
 
 ```http
-# Creates a new purchase order
+# Creates a new Purchase Requisition
 POST https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEREQ_PROCESS_SRV/A_PurchaseRequisitionHeader
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
@@ -275,6 +275,53 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ## Vendor Selection
 
 ## Manage Product Master Data
+
+### OData Service
+Information on SAP API Business Hub: [Product Master](https://api.sap.com/api/API_PRODUCT_SRV/overview)
+
+* https://{host}:{port}/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product
+#### Sample Payload:
+```http
+# Fetch Product "1! and 
+# fetch X-CSRF-Token used for Product Master Record
+# @name FetchReply
+GET  https://{host}:{port}/sap/opu/odata/sap/API_PRODUCT_SRV/A_Product(TEST123BIKE)
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+
+```
+
+
+```http
+# Creates Product Master Record
+POST https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEREQ_PROCESS_SRV/A_PurchaseRequisitionHeader
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+  "Product": "TEST123BIKE",
+  "ProductType": "KMAT",
+  "BaseUnit": "EA",
+  "CountryOfOrigin": "",
+  "ProductGroup": "0002",
+  "Division": "",
+  "ProductHierarchy": "",
+  "CompetitorID": "",
+  "Brand": "",
+  "IndustrySector": "M",
+  "to_Description": {
+    "results": [
+      {
+        "Product": "TEST123BIKE",
+        "Language": "EN",
+        "ProductDescription": "block material"
+      }
+    ]
+  }
+}
+
+```
 
 ## Manage Customer Master Data
 
