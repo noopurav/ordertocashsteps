@@ -320,6 +320,8 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 
 ```
 
+## Supplier Invoice
+
 ## Manage Product Master Data
 
 ### OData Service
