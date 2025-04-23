@@ -272,7 +272,53 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ```
 
 
-## Vendor Selection
+## Goods Receipt
+
+Information on SAP API Business Hub: [Material Document](https://api.sap.com/api/API_MATERIAL_DOCUMENT_SRV/overview)
+
+* https://{host}:{port}/sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV/A_MaterialDocumentHeader
+#### Sample Payload:
+```http
+# Fetch Purchase Requisition "1! and 
+# fetch X-CSRF-Token used for Purchase order
+# @name FetchReply
+GET  https://{host}:{port}/sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV/A_MaterialDocumentHeader('10000564')
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+
+```
+
+
+```http
+# Creates a material document
+POST https://{host}:{port}/sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV/A_MaterialDocumentHeader
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+  "MaterialDocument": "",
+  "MaterialDocumentHeaderText": "Test Creation of GR",
+  "GoodsMovementCode": "01",
+  "PostingDate": "/Date(1715731200000)/",
+  "GoodsMovementCode": "01",
+  "to_MaterialDocumentItem": {
+    "results": [
+      {
+        "Material": "TG12",
+        "Plant": "1010",
+        "PurchaseOrder": "4500001234",
+        "PurchaseOrderItem": "10",
+        "QuantityInEntryUnit": "10",
+        "GoodsMovementType": "101",
+        "GoodsMovementRefDocType": "P",
+        "GoodsRecipientName": "John Doe"
+      }
+    ]
+  }
+}
+
+```
 
 ## Manage Product Master Data
 
