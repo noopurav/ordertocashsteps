@@ -322,6 +322,54 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 
 ## Supplier Invoice
 
+Information on SAP API Business Hub: [Supplier Invoice ](https://api.sap.com/api/OP_API_SUPPLIERINVOICE_PROCESS_SRV/overview)
+
+* https://{host}:{port}/sap/opu/odata/sap/API_SUPPLIERINVOICE_PROCESS_SRV/A_SupplierInvoice
+#### Sample Payload:
+```http
+# Fetch Supplier Invoice "1! and 
+# fetch X-CSRF-Token used for Purchase order
+# @name FetchReply
+GET  https://{host}:{port}/sap/opu/odata/sap/API_SUPPLIERINVOICE_PROCESS_SRV/A_SupplierInvoice('565000564')
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+
+```
+
+
+```http
+# Creates a supplier invoive
+POST https://{host}:{port}/sap/opu/odata/sap/API_SUPPLIERINVOICE_PROCESS_SRV/A_SupplierInvoice
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+  "CompanyCode": "1710",
+  "DocumentDate": "/Date(1745712000000)/",
+  "PostingDate": "/Date(1745712000000)/",
+  "InvoicingParty": "USSU9026",
+  "DocumentCurrency": "USD",
+  "InvoiceGrossAmount": "1000.00",
+  "AccountingDocumentType": "KR",
+  "to_SuplrInvcItemPurOrdRef": {
+    "results": [
+      {
+        "SupplierInvoiceItem": "0001",
+        "PurchaseOrder": "4500001234",
+        "PurchaseOrderItem": "00010",
+        "DocumentCurrency": "USD",
+        "SupplierInvoiceItemAmount": "1000.00",
+        "QuantityInPurchaseOrderUnit": "10",
+        "PurchaseOrderQuantityUnit": "PC"
+       
+      }
+    ]
+  }
+}
+```
+
+
 ## Manage Product Master Data
 
 ### OData Service
