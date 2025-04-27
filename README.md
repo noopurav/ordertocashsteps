@@ -195,16 +195,19 @@ POST https://{host}:{port}/sap/opu/odata/sap/API_PURCHASEREQ_PROCESS_SRV/A_Purch
 Content-Type: application/json
 Authorization: Basic {{username}}:{{password}}
 X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
-{
 
+{
+ 
   "PurchaseRequisitionType": "NB",
-  "to_PurchaseReqnItem": [
+ 
+  "to_PurchaseReqnItem": {
+    "results":[
     {
       "PurchaseRequisition": "",
       "PurchaseRequisitionItem": "1",
       "PurchaseRequisitionItemText": "Test",
-      "Material": "TG12",
-      "Plant": "1010",
+      "Material": "MZ-TG-30",
+      "Plant": "1710",
       "StorageLocation": "",
       "MaterialGroup": "",
       "PurchasingInfoRecord": "",
@@ -213,7 +216,9 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
       "BaseUnit": "PC"
     }
   ]
+                                }
 }
+
 
 ```
 
