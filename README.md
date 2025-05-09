@@ -807,6 +807,145 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ## Manage Credit Memo Requests
 
 ## Manage Debit Memo Requests 
+### OData Service
+Information on SAP API Business Hub: [Debit Memo Request](https://api.sap.com/api/OP_API_DEBIT_MEMO_REQUEST_SRV_0001/overview)
+
+* https://{host}:{port}/sap/opu/odata/sap/API_DEBIT_MEMO_REQUEST_SRV/A_DebitMemoRequest
+#### Sample Payload:
+```http
+# Fetch Debit Memo request "1! and 
+# fetch X-CSRF-Token used for Product Master Record
+# @name FetchReply
+GET   https://{host}:{port}/sap/opu/odata/sap/API_DEBIT_MEMO_REQUEST_SRV/A_DebitMemoRequest
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+
+```
+
+
+```http
+# Creates a debit memo request
+POST https://{host}:{port}/sap/opu/odata/sap/API_DEBIT_MEMO_REQUEST_SRV/A_DebitMemoRequest
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+  "DebitMemoRequest": "",
+  "DebitMemoRequestType": "DR",
+  "SalesOrganization": "1710",
+  "DistributionChannel": "11",
+  "OrganizationDivision": "00",
+  "SalesGroup": "",
+  "SalesOffice": "",
+  "SalesDistrict": "",
+  "CreationDate": "/Date(1485993600000)/",
+  "CreatedByUser": "I324037",
+  "LastChangeDate": null,
+  "LastChangeDateTime": "/Date(1486016844775+0000)/",
+  "PurchaseOrderByCustomer": "6619",
+  "CustomerPurchaseOrderType": "",
+  "CustomerPurchaseOrderDate": "/Date(1485993600000)/",
+  "DebitMemoRequestDate": "/Date(1485993600000)/",
+  "TotalNetAmount": "87.50",
+  "TransactionCurrency": "USD",
+  "SDDocumentReason": "EDI",
+  "PricingDate": "/Date(1485993600000)/",
+  "CustomerTaxClassification1": "",
+  "CustomerTaxClassification2": "",
+  "CustomerTaxClassification3": "",
+  "CustomerTaxClassification4": "",
+  "CustomerTaxClassification5": "",
+  "CustomerTaxClassification6": "",
+  "CustomerTaxClassification7": "",
+  "CustomerTaxClassification8": "",
+  "CustomerTaxClassification9": "",
+  "HeaderBillingBlockReason": "Y9",
+  "IncotermsClassification": "CFR",
+  "IncotermsTransferLocation": "California",
+  "IncotermsLocation1": "California",
+  "IncotermsLocation2": "",
+  "IncotermsVersion": "",
+  "CustomerPaymentTerms": "0001",
+  "PaymentMethod": "",
+  "BillingDocumentDate": "/Date(1485993600000)/",
+  "ServicesRenderedDate": null,
+  "ReferenceSDDocument": "6619",
+  "ReferenceSDDocumentCategory": "2",
+  "OverallSDProcessStatus": "A",
+  "TotalCreditCheckStatus": "",
+  "OverallSDDocumentRejectionSts": "A",
+  "OverallOrdReltdBillgStatus": "A",
+  "AccountingDocExternalReference": "",
+  "AssignmentReference": "",
+  "FashionCancelDate": null,
+  "RetailAdditionalCustomerGrp6": "",
+  "RetailAdditionalCustomerGrp7": "",
+  "RetailAdditionalCustomerGrp8": "",
+  "RetailAdditionalCustomerGrp9": "",
+  "RetailAdditionalCustomerGrp10": "",
+  "to_Item": {
+    "results": [
+      {
+        "DebitMemoRequest": "",
+        "DebitMemoRequestItem": "10",
+        "HigherLevelItem": "0",
+        "DebitMemoRequestItemCategory": "L2N",
+        "DebitMemoRequestItemText": "Cartridge Replacement",
+        "PurchaseOrderByCustomer": "6619",
+        "Material": "MZ_CART_REPL",
+        "MaterialByCustomer": "",
+        "PricingDate": "/Date(1485993600000)/",
+        "RequestedQuantity": "1.000",
+        "RequestedQuantityUnit": "PC",
+        "ItemGrossWeight": "1.000",
+        "ItemNetWeight": "0.900",
+        "ItemWeightUnit": "G",
+        "ItemWeightSAPUnit": "G",
+        "ItemWeightISOUnit": "GRM",
+        "ItemVolume": "0.000",
+        "ItemVolumeUnit": "",
+        "ItemVolumeSAPUnit": "",
+        "ItemVolumeISOUnit": "",
+        "TransactionCurrency": "USD",
+        "NetAmount": "37.50",
+        "MaterialGroup": "L001",
+        "MaterialPricingGroup": "",
+        "ProductTaxClassification1": "1",
+        "Batch": "",
+        "Plant": "1710",
+        "IncotermsClassification": "CFR",
+        "IncotermsTransferLocation": "California",
+        "IncotermsLocation1": "California",
+        "IncotermsLocation2": "",
+        "CustomerPaymentTerms": "0001",
+        "ItemBillingBlockReason": "",
+        "SalesDocumentRjcnReason": "",
+        "WBSElement": "",
+        "ProfitCenter": "SAP-DUMMY",
+        "ReferenceSDDocument": "6619",
+        "ReferenceSDDocumentItem": "10",
+        "SDProcessStatus": "A",
+        "OrderRelatedBillingStatus": "A",
+        "ProductSeasonYear": "",
+        "ProductSeason": "",
+        "ProductCollection": "",
+        "ProductTheme": "",
+        "SeasonCompletenessStatus": "",
+        "FashionCancelDate": null,
+        "ProductCharacteristic1": "",
+        "ProductCharacteristic2": "",
+        "ProductCharacteristic3": "",
+        "ShippingGroupNumber": "",
+        "ShippingGroupRule": "",
+        "CrossPlantConfigurableProduct": "",
+        "ProductCategory": "",
+        "RequirementSegment": ""
+      }
+    ]
+  }
+}
+```
 
 ## ## Project Control – Enterprise Projects
 
