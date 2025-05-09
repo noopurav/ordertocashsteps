@@ -435,7 +435,7 @@ Information on SAP API Business Hub: [Buisness Partner](https://api.sap.com/api/
 # Fetch Buisness Partner "1! and 
 # fetch X-CSRF-Token used for Product Master Record
 # @name FetchReply
-GET  https://microsoftintegrationdemo.com:44301/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$filter=BusinessPartnerCategory eq '2'
+GET  https://{host}:{port}/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartner?$filter=BusinessPartnerCategory eq '2'
 Authorization: Basic {{username}}:{{password}}
 X-CSRF-Token: Fetch
 
@@ -479,20 +479,341 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 }
 
 ```
+## Manage Sales Contracts
+
+### OData Service
+Information on SAP API Business Hub: [Sales Contract](https://api.sap.com/api/OP_API_SALES_CONTRACT_SRV_0001/overview)
+
+* https://{host}:{port}/sap/opu/odata/sap/API_SALES_CONTRACT_SRV/A_SalesContract
+#### Sample Payload:
+```http
+# Fetch Sales Contract "1! and 
+# fetch X-CSRF-Token used for Product Master Record
+# @name FetchReply
+GET   https://{host}:{port}/sap/opu/odata/sap/API_SALES_CONTRACT_SRV/A_SalesContract
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+
+```
+
+
+```http
+# Creates a new sales contract
+POST https://{host}:{port}/sap/opu/odata/sap/API_SALES_CONTRACT_SRV/A_SalesContract
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+  "SalesContract": "",
+  "SalesContractType": "ECO2",
+  "SalesOrganization": "L100",
+  "DistributionChannel": "L0",
+  "OrganizationDivision": "L0",
+  "SalesGroup": "",
+  "SalesOffice": "",
+  "SalesDistrict": "",
+  "SoldToParty": "1000050",
+  "CreatedByUser": "C5250143",
+  "PurchaseOrderByCustomer": "",
+  "CustomerPurchaseOrderType": "",
+  "CustomerPurchaseOrderDate": null,
+  "SalesContractDate": "/Date(1746831739204)/",
+  "TotalNetAmount": "312800.00",
+  "TransactionCurrency": "USD",
+  "SDDocumentReason": "",
+  "PricingDate": "/Date(1746831739204)/",
+  "IncotermsClassification": "CIF",
+  "IncotermsTransferLocation": "COST",
+  "IncotermsLocation1": "COST",
+  "IncotermsLocation2": "",
+  "CustomerPaymentTerms": "0001",
+  "PaymentMethod": "",
+  "SalesContractValidityStartDate": "/Date(1746831739204)/",
+  "SalesContractValidityEndDate": "/Date(1746831739204)/",
+  "SalesContractValidityPerdUnit": "4",
+  "SalesContractValidityPerdCat": "02",
+  "SalesContractSignedDate": null,
+  "NmbrOfSalesContractValdtyPerd": "1",
+  "SalesContractFollowUpAction": "0003",
+  "SlsContractFollowUpActionDate": "/Date(1746831739204)/",
+  "ContractManualCompletion": "",
+  "ReferenceSDDocument": "20000008",
+  "to_Item": {
+    "results": [
+      {
+        "SalesContract": "",
+        "SalesContractItem": "70",
+        "HigherLevelItem": "0",
+        "SalesContractItemCategory": "ZCTN",
+        "SalesContractItemText": "Labor Work",
+        "PurchaseOrderByCustomer": "",
+        "Material": "LABOR",
+        "MaterialByCustomer": "",
+        "PricingDate": "/Date(1746831739204)/",
+        "RequestedQuantity": "10.000",
+        "RequestedQuantityUnit": "H",
+        "RequestedQuantitySAPUnit": "H",
+        "RequestedQuantityISOUnit": "H",
+        "ItemGrossWeight": "0.000",
+        "ItemNetWeight": "0.000",
+        "ItemWeightUnit": "KG",
+        "ItemWeightSAPUnit": "KG",
+        "ItemWeightISOUnit": "KGM",
+        "ItemVolume": "0.000",
+        "ItemVolumeUnit": "",
+        "ItemVolumeSAPUnit": "",
+        "ItemVolumeISOUnit": "",
+        "OutlineAgreementTargetAmount": "0.00",
+        "TransactionCurrency": "USD",
+        "NetAmount": "0.00",
+        "MaterialGroup": "",
+        "MaterialPricingGroup": "",
+        "Batch": "",
+        "ProductionPlant": "L10",
+        "StorageLocation": "",
+        "ShippingPoint": "",
+        "IncotermsClassification": "CIF",
+        "IncotermsTransferLocation": "COST",
+        "IncotermsLocation1": "COST",
+        "IncotermsLocation2": "",
+        "CustomerPaymentTerms": "0001",
+        "SalesDocumentRjcnReason": "",
+        "ItemBillingBlockReason": "",
+        "WBSElement": "E-3000-1",
+        "ProfitCenter": "LPC001",
+        "ReferenceSDDocument": "",
+        "ReferenceSDDocumentItem": "0",
+        "SDProcessStatus": "A",
+        "SalesContractValidityStartDate": "/Date(1746831739204)/",
+        "SalesContractValidityEndDate": "/Date(1746831739204)/",
+        "NmbrOfSalesContractValdtyPerd": "1",
+        "SalesContractValidityPerdUnit": "4",
+        "SalesContractValidityPerdCat": "02",
+        "SalesContractSignedDate": null,
+        "SalesContractFollowUpAction": "0003",
+        "SlsContractFollowUpActionDate": "/Date(1746831739204)/",
+        "SlsContrItemReleasedQuantity": "0.000",
+        "SlsContrItmReldQuantityUnit": "H",
+        "ProductSeasonYear": "",
+        "ProductSeason": "",
+        "ProductCollection": "",
+        "ProductTheme": "",
+        "SeasonCompletenessStatus": "",
+        "FashionCancelDate": null,
+        "ProductCharacteristic1": "",
+        "ProductCharacteristic2": "",
+        "ProductCharacteristic3": "",
+        "ShippingGroupNumber": "",
+        "ShippingGroupRule": "",
+        "CrossPlantConfigurableProduct": "",
+        "ProductCategory": "",
+        "ContractItemConsumedQuantity": "0.000",
+        "ContrItemConsumedQuantityUnit": "",
+        "ContrItemOpenQty": "0.000",
+        "ContrItemOpenQtyUnit": "",
+        "RequirementSegment": ""
+      }
+    ]
+  }
+}
+```
+
+
+## ## Manage Customer Returns
+
+### OData Service
+Information on SAP API Business Hub: [Customer Return (A2X)](https://api.sap.com/api/OP_API_CUSTOMER_RETURN_SRV_0001/overview)
+
+* https://{host}:{port}/sap/opu/odata/sap/API_CUSTOMER_RETURN_SRV/A_CustomerReturn
+#### Sample Payload:
+```http
+# Fetch customer return "1! and 
+# fetch X-CSRF-Token used for Product Master Record
+# @name FetchReply
+GET   https://{host}:{port}/sap/opu/odata/sap/API_CUSTOMER_RETURN_SRV/A_CustomerReturn
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+
+```
+
+
+```http
+# Creates one or more return order header
+POST https://{host}:{port}/sap/opu/odata/sap/API_CUSTOMER_RETURN_SRV/A_CustomerReturn
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+  "CustomerReturn": "",
+  "CustomerReturnType": "CBRE",
+  "SalesOrganization": "1710",
+  "DistributionChannel": "10",
+  "OrganizationDivision": "00",
+  "SalesGroup": "",
+  "SalesOffice": "",
+  "SalesDistrict": "",
+  "SoldToParty": "17100001",
+  "CreationDate": "/Date(1483920000000)/",
+  "CreatedByUser": "C5253879",
+  "LastChangeDate": null,
+  "SenderBusinessSystemName": "",
+  "LastChangeDateTime": "/Date(1483930804343+0000)/",
+  "PurchaseOrderByCustomer": "",
+  "CustomerPurchaseOrderType": "",
+  "CustomerPurchaseOrderDate": null,
+  "CustomerReturnDate": "/Date(1483920000000)/",
+  "TotalNetAmount": "17.55",
+  "TransactionCurrency": "USD",
+  "SDDocumentReason": "102",
+  "PricingDate": "/Date(1483488000000)/",
+  "RequestedDeliveryDate": "/Date(1483920000000)/",
+  "ShippingType": "",
+  "HeaderBillingBlockReason": "",
+  "DeliveryBlockReason": "",
+  "IncotermsClassification": "EXW",
+  "IncotermsTransferLocation": "Palo Alto",
+  "IncotermsLocation1": "Palo Alto",
+  "IncotermsLocation2": "",
+  "IncotermsVersion": "",
+  "CustomerPaymentTerms": "0004",
+  "PaymentMethod": "",
+  "CustomerTaxClassification1": "1",
+  "CustomerTaxClassification2": "",
+  "CustomerTaxClassification3": "",
+  "CustomerTaxClassification4": "",
+  "CustomerTaxClassification5": "",
+  "CustomerTaxClassification6": "",
+  "CustomerTaxClassification7": "",
+  "CustomerTaxClassification8": "",
+  "CustomerTaxClassification9": "",
+  "RetsMgmtProcess": "",
+  "ReferenceSDDocument": "90015017",
+  "ReferenceSDDocumentCategory": "M",
+  "AccountingDocExternalReference": "0090015017",
+  "AssignmentReference": "",
+  "CustomerReturnApprovalReason": "",
+  "SalesDocApprovalStatus": "",
+  "RetsMgmtLogProcgStatus": "",
+  "RetsMgmtCompnProcgStatus": "",
+  "RetsMgmtProcessingStatus": "",
+  "OverallSDProcessStatus": "C",
+  "TotalCreditCheckStatus": "",
+  "OverallSDDocumentRejectionSts": "A",
+  "FashionCancelDate": null,
+  "RetailAdditionalCustomerGrp6": "",
+  "RetailAdditionalCustomerGrp7": "",
+  "RetailAdditionalCustomerGrp8": "",
+  "RetailAdditionalCustomerGrp9": "",
+  "RetailAdditionalCustomerGrp10": "",
+  "to_Item": {
+    "results": [
+      {
+        "CustomerReturn": "",
+        "CustomerReturnItem": "10",
+        "HigherLevelItem": "0",
+        "CustomerReturnItemCategory": "CBEN",
+        "CustomerReturnItemText": "Helmet",
+        "PurchaseOrderByCustomer": "",
+        "Material": "TG11",
+        "MaterialByCustomer": "",
+        "RequestedQuantity": "1",
+        "RequestedQuantityUnit": "PC",
+        "ItemGrossWeight": "1.000",
+        "ItemNetWeight": "0.900",
+        "ItemWeightUnit": "G",
+        "ItemVolume": "0.000",
+        "ItemVolumeUnit": "",
+        "TransactionCurrency": "USD",
+        "NetAmount": "17.55",
+        "MaterialGroup": "L001",
+        "Batch": "",
+        "ProductionPlant": "1710",
+        "StorageLocation": "171A",
+        "ShippingPoint": "171R",
+        "ShippingType": "",
+        "DeliveryPriority": "2",
+        "IncotermsClassification": "EXW",
+        "IncotermsTransferLocation": "Palo Alto",
+        "IncotermsLocation1": "Palo Alto",
+        "IncotermsLocation2": "",
+        "CustomerPaymentTerms": "0004",
+        "ProductTaxClassification1": "0",
+        "SalesDocumentRjcnReason": "",
+        "ItemBillingBlockReason": "",
+        "ProfitCenter": "YB110",
+        "RetsMgmtProcess": "",
+        "RetsMgmtProcessItem": "0",
+        "ReturnReason": "",
+        "RetsMgmtProcessingBlock": "",
+        "CustRetItmFollowUpActivity": "",
+        "ReturnsMaterialHasBeenReceived": "",
+        "ReturnsRefundType": "",
+        "ReturnsRefundProcgMode": "",
+        "RetsProdValnIsSuspended": "",
+        "ReturnsRefundExtent": "",
+        "PrelimRefundIsDetermined": "",
+        "ReturnsRefundRjcnReason": "",
+        "ReplacementMaterial": "",
+        "ReplacementMaterialQuantity": "0.000",
+        "ReplacementMaterialQtyUnit": "",
+        "ReplacementMaterialIsRequested": "",
+        "ReplacementMatlSupplyingPlant": "",
+        "NextPlantForFollowUpActivity": "",
+        "ReturnsTransshipmentPlant": "",
+        "Supplier": "",
+        "SupplierRetMatlAuthzn": "",
+        "SuplrRetMatlAuthznIsRequired": "",
+        "CustomerRetMatlInspResultCode": "",
+        "NextFllwUpActivityForMatlInsp": "",
+        "RetMatlInspResultCode": "",
+        "ProductIsInspectedAtCustSite": "",
+        "CustRetMatlAuthzn": "",
+        "CRMLogicalSystem": "",
+        "CRMObjectUUID": "",
+        "CRMObjectID": "",
+        "CRMObjectType": "",
+        "RetsMgmtItmLogProcgStatus": "",
+        "RetsMgmtItmCompnProcgStatus": "",
+        "RetsMgmtItmProcgStatus": "",
+        "ReturnsDocumentStatus": "",
+        "ReturnsDocumentApprovalStatus": "",
+        "SDProcessStatus": "C",
+        "ReferenceSDDocument": "90015017",
+        "ReferenceSDDocumentItem": "10",
+        "ReferenceSDDocumentCategory": "M",
+        "SDDocumentRejectionStatus": "A",
+        "ProductSeasonYear": "",
+        "ProductSeason": "",
+        "ProductCollection": "",
+        "ProductTheme": "",
+        "SeasonCompletenessStatus": "",
+        "FashionCancelDate": null,
+        "ProductCharacteristic1": "",
+        "ProductCharacteristic2": "",
+        "ProductCharacteristic3": "",
+        "ShippingGroupNumber": "",
+        "ShippingGroupRule": "",
+        "CrossPlantConfigurableProduct": "",
+        "ProductCategory": "",
+        "RequirementSegment": ""
+      }
+    ]
+  }
+}
+```
+
+## Manage Credit Memo Requests
+
+## Manage Debit Memo Requests 
+
+## ## Project Control – Enterprise Projects
 
 ## Manage Journal Entries – New Version
 
 ## Manage Project Billing – Project Billing Request
 
-## Manage Sales Contracts (Version 2)
-
-## ## Manage Customer Returns (Version 2)
-
-## Manage Credit Memo Requests (Version 2)
-
-## Manage Debit Memo Requests (Version 2)
-
-## ## Project Control – Enterprise Projects
 
 
 
