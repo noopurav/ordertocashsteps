@@ -637,7 +637,6 @@ X-CSRF-Token: Fetch
 
 ```
 
-
 ```http
 # Creates one or more return order header
 POST https://{host}:{port}/sap/opu/odata/sap/API_CUSTOMER_RETURN_SRV/A_CustomerReturn
@@ -805,6 +804,146 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ```
 
 ## Manage Credit Memo Requests
+
+### OData Service
+Information on SAP API Business Hub: [Credit Memo Request](https://api.sap.com/api/OP_API_CREDIT_MEMO_REQUEST_SRV_0001/overview)
+
+* https://{host}:{port/sap/opu/odata/sap/API_CREDIT_MEMO_REQUEST_SRV/A_CreditMemoRequest
+#### Sample Payload:
+```http
+# Fetch credit Memo request "1! and 
+# fetch X-CSRF-Token used for Product Master Record
+# @name FetchReply
+GET   https://{host}:{port}/sap/opu/odata/sap/API_CREDIT_MEMO_REQUEST_SRV/A_CreditMemoRequest
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: Fetch
+
+```
+
+```http
+# Creates a credit memo request
+POST https://{host}:{port}/sap/opu/odata/sap/API_CREDIT_MEMO_REQUEST_SRV/A_CreditMemoRequest
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
+
+{
+  "CreditMemoRequest": "",
+  "CreditMemoRequestType": "CR",
+  "SalesOrganization": "1710",
+  "DistributionChannel": "10",
+  "OrganizationDivision": "00",
+  "SalesGroup": "",
+  "SalesOffice": "",
+  "SalesDistrict": "",
+  "SoldToParty": "17100001",
+  "CreationDate": "/Date(1483920000000)/",
+  "CreatedByUser": "C5253879",
+  "LastChangeDate": null,
+  "LastChangeDateTime": "/Date(1483932884096+0000)/",
+  "PurchaseOrderByCustomer": "1234",
+  "CustomerPurchaseOrderType": "",
+  "CustomerPurchaseOrderDate": null,
+  "CreditMemoRequestDate": "/Date(1483920000000)/",
+  "TotalNetAmount": "17.55",
+  "TransactionCurrency": "USD",
+  "SDDocumentReason": "102",
+  "PricingDate": "/Date(1483833600000)/",
+  "CustomerTaxClassification1": "1",
+  "CustomerAccountAssignmentGroup": "01",
+  "HeaderBillingBlockReason": "Y8",
+  "IncotermsClassification": "EXW",
+  "IncotermsTransferLocation": "Palo Alto",
+  "IncotermsLocation1": "Palo Alto",
+  "IncotermsLocation2": "",
+  "IncotermsVersion": "",
+  "CustomerPaymentTerms": "0004",
+  "PaymentMethod": "",
+  "BillingDocumentDate": "/Date(1483920000000)/",
+  "ServicesRenderedDate": "/Date(1483833600000)/",
+  "ReferenceSDDocument": "90015019",
+  "ReferenceSDDocumentCategory": "M",
+  "CreditMemoReqApprovalReason": "",
+  "SalesDocApprovalStatus": "",
+  "OverallSDProcessStatus": "A",
+  "TotalCreditCheckStatus": "",
+  "OverallSDDocumentRejectionSts": "A",
+  "OverallOrdReltdBillgStatus": "A",
+  "AccountingDocExternalReference": "0090015019",
+  "AssignmentReference": "",
+  "FashionCancelDate": null,
+  "RetailAdditionalCustomerGrp6": "",
+  "RetailAdditionalCustomerGrp7": "",
+  "RetailAdditionalCustomerGrp8": "",
+  "RetailAdditionalCustomerGrp9": "",
+  "RetailAdditionalCustomerGrp10": "",
+  "to_Item": {
+    "results": [
+      {
+        "CreditMemoRequest": "",
+        "CreditMemoRequestItem": "10",
+        "HigherLevelItem": "0",
+        "CreditMemoRequestItemCategory": "G2N",
+        "CreditMemoRequestItemText": "Helmet",
+        "PurchaseOrderByCustomer": "1234",
+        "Material": "TG11",
+        "MaterialByCustomer": "",
+        "PricingDate": "/Date(1483833600000)/",
+        "RequestedQuantity": "1",
+        "RequestedQuantityUnit": "PC",
+        "RequestedQuantitySAPUnit": "ST",
+        "RequestedQuantityISOUnit": "PCE",
+        "ItemGrossWeight": "1.000",
+        "ItemNetWeight": "0.900",
+        "ItemWeightUnit": "G",
+        "ItemWeightSAPUnit": "G",
+        "ItemWeightISOUnit": "GRM",
+        "ItemVolume": "0.000",
+        "ItemVolumeUnit": "",
+        "ItemVolumeSAPUnit": "",
+        "ItemVolumeISOUnit": "",
+        "TransactionCurrency": "USD",
+        "NetAmount": "17.55",
+        "MaterialGroup": "L001",
+        "MaterialPricingGroup": "",
+        "ProductTaxClassification1": "0",
+        "MatlAccountAssignmentGroup": "01",
+        "Batch": "",
+        "Plant": "1710",
+        "IncotermsClassification": "EXW",
+        "IncotermsTransferLocation": "Palo Alto",
+        "IncotermsLocation1": "Palo Alto",
+        "IncotermsLocation2": "",
+        "CustomerPaymentTerms": "0004",
+        "ItemBillingBlockReason": "",
+        "SalesDocumentRjcnReason": "",
+        "WBSElement": "",
+        "ProfitCenter": "YB110",
+        "ReferenceSDDocument": "90015019",
+        "ReferenceSDDocumentItem": "10",
+        "SDProcessStatus": "A",
+        "OrderRelatedBillingStatus": "A",
+        "ServicesRenderedDate": "/Date(1483833600000)/",
+        "ProductSeasonYear": "",
+        "ProductSeason": "",
+        "ProductCollection": "",
+        "ProductTheme": "",
+        "SeasonCompletenessStatus": "",
+        "FashionCancelDate": null,
+        "ProductCharacteristic1": "",
+        "ProductCharacteristic2": "",
+        "ProductCharacteristic3": "",
+        "ShippingGroupNumber": "",
+        "ShippingGroupRule": "",
+        "CrossPlantConfigurableProduct": "",
+        "ProductCategory": "",
+        "RequirementSegment": ""
+      }
+    ]
+  }
+}
+```
+
 
 ## Manage Debit Memo Requests 
 ### OData Service
