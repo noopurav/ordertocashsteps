@@ -9,23 +9,25 @@ As agents become more autonomous, their ability to interact with systems through
 
 This repo includes everything needed to build and deploy intelligent agents that can interact with SAP:
 
+- **OData API Templates**  
+  A curated list of common SAP business object APIs (e.g., Sales Orders, Materials, Vendors) with:
+  - Minimum required fields to create each object
+  - Example payloads for quick testing and integration
+
 - **Power Automate Flows**  
-  Pre-built flows that:
+  Pre-built flows for each trasncation above that:
   - Accept user input
   - Use an HTTP connector to call an OpenAI API that converts natural language into structured API requests
   - Call SAP using the OData connector
   - Return the response to an agent for further processing
 
-- **OData API Templates**  
-  A curated list of common SAP business object APIs (e.g., Sales Orders, Materials, Vendors) with:
-  - Minimum required fields to create each object
-  - Example payloads for quick testing and integration
 
 - **Copilot Studio Agent Project**  
   A ready-to-use Copilot Studio project that demonstrates:
   - How to trigger flows using natural language or events
   - How to use new AI features like reasoning and memory
   - How to orchestrate actions across Microsoft 365 and SAP to save time and automate business processes
+  - Instructions on how to create it.
 
 ---
 
