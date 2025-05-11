@@ -17,9 +17,9 @@ This repo includes everything needed to build and deploy intelligent agents that
 - **Power Automate Flows**  
   Pre-built flows for each trasncation above that:
   - Accept user input
-  - Use an HTTP connector to call an OpenAI API that converts natural language into structured API requests
+  - Use an HTTP connector to call an  Azure OpenAI API that converts natural language into structured API requests
   - Call SAP using the OData connector
-  - Return the response to an agent for further processing
+  - Return the response to an agent created on Copilot Studio for further processing
 
 
 - **Copilot Studio Agent Project**  
