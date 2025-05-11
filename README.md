@@ -2,64 +2,8 @@
 # 🤖 Making SAP Transactions Accessible for Autonomous Agents Using OData APIs and Copilot Studio
 
 ## Overview
+As agents become more autonomous, their ability to interact with systems through APIs has become essential. This repository demonstrates how to make SAP transactions accessible to agents using the Power Platform,Copilot Studio Azure AI Foundry, and SAP OData APIs.
 
-As intelligent agents become more autonomous, their ability to interact with systems through APIs has become essential. Unlike traditional systems where users manually filled out connector input fields, agents now dynamically generate API requests based on context, learning, and interaction history.
-
-This repository demonstrates how agents can autonomously interact with SAP systems using the **OData protocol**, using the API specificaiont listed in the SAP BUisness Accelerators hubs and also has the common ones listed with the fields required at the bare minimum to create any of the buisness objects like Sales order, Pucahses Orders, Credit Memo requests. This repo also includes Power Platform flows that:
-
-- Understand and map business intent to SAP transactions  
-- Generate API requests dynamically  
-- Learn from previous interactions to improve request accuracy  
-- Use the OData connector to send requests to SAP—all without human intervention  
-
----
-
-## 🧠 From Connectors to Cognitive Agents
-
-### Then: Manual Connectors  
-In earlier implementations, we relied on **connectors with predefined input fields**. Users had to manually enter values, which limited automation and scalability.
-
-### Now: Autonomous API Generation  
-With the rise of **agent-based architectures**, agents need a way to **dynamically create requests and call actions** in a standardized, reliable way. This is where **OData** becomes essential.
-
-**OData (Open Data Protocol)** is a widely adopted, REST-based protocol that allows agents to interact with systems like SAP using a consistent API structure. Because it is standardized, agents can:
-
-- Understand the structure of requests and responses  
-- Automatically generate valid API calls  
-- Adapt to different SAP transactions without custom logic for each one  
-
-This enables agents to:
-- Interpret user goals  
-- Identify the required SAP transaction  
-- Construct the appropriate API request in OData format  
-- Send the request using the OData connector  
-
-This enables **end-to-end automation** of SAP workflows, powered by intelligent agents that learn and adapt over time.
-
----
-
-## 🔄 How It Works
-
-1. **Intent Recognition**  
-   The agent identifies the SAP transaction needed (e.g., `Create Sales Order`, `Update Material`, etc.).
-
-2. **Request Construction**  
-   Using learned patterns and context, the agent builds a valid OData API request.
-
-3. **Execution via OData Connector**  
-   The request is sent to SAP using the OData connector, which handles authentication, routing, and response parsing.
-
-4. **Learning Loop**  
-   The agent refines its request generation logic over time by analyzing responses and outcomes.
-
----
-# 🤖 Making SAP Transactions Accessible for Autonomous Agents Using APIs and Power Platform
-
-## Overview
-
-As intelligent agents become more autonomous, their ability to interact with systems through APIs has become essential. This repository demonstrates how to make SAP transactions accessible to agents using the Power Platform, OpenAI, and OData APIs.
-
----
 
 ## 📦 What's in This Repository
 
