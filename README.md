@@ -5,7 +5,7 @@
 
 As intelligent agents become more autonomous, their ability to interact with systems through APIs has become essential. Unlike traditional systems where users manually filled out connector input fields, agents now dynamically generate API requests based on context, learning, and interaction history.
 
-This repository demonstrates how agents can autonomously interact with SAP systems using the **OData protocol**, a standardized RESTful API format. We showcase how agents can:
+This repository demonstrates how agents can autonomously interact with SAP systems using the **OData protocol**, using the API specificaiont listed in the SAP BUisness Accelerators hubs and also has the common ones listed with the fields required at the bare minimum to create any of the buisness objects like Sales order, Pucahses Orders, Credit Memo requests. This repo also includes Power Platform flows that:
 
 - Understand and map business intent to SAP transactions  
 - Generate API requests dynamically  
