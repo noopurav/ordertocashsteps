@@ -53,36 +53,52 @@ This enables **end-to-end automation** of SAP workflows, powered by intelligent 
    The agent refines its request generation logic over time by analyzing responses and outcomes.
 
 ---
+# 🤖 Making SAP Transactions Accessible for Autonomous Agents Using APIs and Power Platform
 
-## 📘 Example: Creating a Sales Order
+## Overview
 
-```json
-POST /sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder
-{
-  "SalesOrderType": "OR",
-  "SalesOrganization": "1000",
-  "DistributionChannel": "10",
-  "Division": "00",
-  "SoldToParty": "123456",
-  "OrderItems": [
-    {
-      "Material": "MAT123",
-      "OrderQuantity": "10"
-    }
-  ]
-}
+As intelligent agents become more autonomous, their ability to interact with systems through APIs has become essential. This repository demonstrates how to make SAP transactions accessible to agents using the Power Platform, OpenAI, and OData APIs.
 
-## 🚀 Copilot Studio Integration
+---
 
-This repository also includes an example of how to use **Copilot Studio** to build agents that are:
+## 📦 What's in This Repository
 
-- **Triggered by user input or events**  
-- **Capable of autonomously taking action**  
-- **Integrated with both Microsoft 365** (for communication and files) **and SAP** (for ERP data)  
+This repo includes everything needed to build and deploy intelligent agents that can interact with SAP:
 
-With this integration, agents can combine insights from across the organization—emails, documents, calendars, and ERP records—to make informed decisions and take action automatically
+- **Power Automate Flows**  
+  Pre-built flows that:
+  - Accept user input
+  - Use an HTTP connector to call an OpenAI API that converts natural language into structured API requests
+  - Call SAP using the OData connector
+  - Return the response to an agent for further processing
+
+- **OData API Templates**  
+  A curated list of common SAP business object APIs (e.g., Sales Orders, Materials, Vendors) with:
+  - Minimum required fields to create each object
+  - Example payloads for quick testing and integration
+
+- **Copilot Studio Agent Project**  
+  A ready-to-use Copilot Studio project that demonstrates:
+  - How to trigger flows using natural language or events
+  - How to use new AI features like reasoning and memory
+  - How to orchestrate actions across Microsoft 365 and SAP to save time and automate business processes
+
+---
+
+## 🚀 Why This Matters
+
+By combining the Power Platform, OpenAI, and SAP OData APIs, this solution enables:
+
+- Seamless integration between communication tools (like Outlook and Teams) and ERP systems  
+- Agents that can reason, decide, and act—without manual intervention  
+- A scalable foundation for building intelligent business process automation
 
 
+
+
+
+
+# SAP APIs from Buisness Accelerator Hub:
 
 # 'Order to Cash' process
 This documentation outlines some basic steps in the Order to Cash process (inspired by [this](https://community.sap.com/t5/enterprise-resource-planning-blogs-by-sap/step-by-step-to-run-a-simple-order-to-cash-process/ba-p/13439388) guide). The goal is to get you started with the relevant SAP OData Calls, but then also to provide you with samples that you can import in Power Automate and Copilot Studio to quickly get you started!
@@ -141,7 +157,7 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 
 #### Sample Power Automate Flow
 
-#### Sample Action in Copilot Studio 
+(INSERT LINK TO ACTION)/ Image
 
 
 ## Deliver the goods (VL01N)
