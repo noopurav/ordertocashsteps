@@ -1,9 +1,6 @@
 
 # 🤖 Making SAP Transactions Accessible for Autonomous Agents Using OData APIs and Copilot Studio
 
-## Overview
-As agents become more autonomous, their ability to interact with systems through APIs has become essential. This repository demonstrates how to make SAP transactions accessible to agents using the Power Platform,Copilot Studio Azure AI Foundry, and SAP OData APIs.
-
 
 ## 🌐 Why APIs Matter for Autonomous Agents
 
