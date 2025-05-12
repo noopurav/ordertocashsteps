@@ -5,6 +5,31 @@
 As agents become more autonomous, their ability to interact with systems through APIs has become essential. This repository demonstrates how to make SAP transactions accessible to agents using the Power Platform,Copilot Studio Azure AI Foundry, and SAP OData APIs.
 
 
+## 🌐 Why APIs Matter for Autonomous Agents
+
+As agents become more autonomous, their ability to interact with enterprise systems through **APIs** has become not just beneficial—but essential. This repository demonstrates how to make **SAP transactions accessible to agents** using a combination of the **Power Platform**, **Copilot Studio**, **Azure AI Foundry**, and **SAP OData APIs**.
+
+### Why Not Traditional Connectors?
+
+In traditional automation setups, **connectors** were used to bridge systems. These connectors often relied on **predefined input fields** that required manual data entry or rigid mappings. While effective for simple workflows, this model breaks down in the context of autonomous agents.
+
+Agents are not designed to manually fill out forms or input fields. Instead, they require:
+
+- **Standardized templates** for communication  
+- **Structured, machine-readable interfaces**  
+- **Dynamic request generation** based on context and reasoning  
+
+### Why APIs and OData?
+
+APIs—especially those based on **OData**, a widely adopted RESTful protocol—solve this problem by providing a **consistent, predictable interface** for interacting with complex systems like SAP. With OData APIs, agents can:
+
+- Dynamically construct requests based on user intent  
+- Call SAP transactions without needing custom logic for each one  
+- Learn and adapt over time to improve accuracy and efficiency  
+
+This approach enables agents to **autonomously trigger, execute, and respond to business processes**—turning what used to be manual, repetitive tasks into intelligent, automated workflows.
+
+
 ## 📦 What's in This Repository
 
 This repo includes everything needed to build and deploy intelligent agents that can interact with SAP:
