@@ -48,6 +48,34 @@ This repo includes everything needed to build and deploy intelligent agents that
   - Instructions on how to create it.
 
 ---
+# Order to Cash Steps
+
+## Table of Contents
+
+1. Create Sales Order 
+3. Billing the Sales Order 
+7. Create Purchase Requisition
+8. Create Purchase Order
+10. Create Supplier Invoice
+11. Manage ProductMaster Data
+12. Manage Customer Master Data
+13. Manage Sales Contracts
+14. Manage Customer Returns
+15. Manage Credit Memo Requests
+16. Managee Debit Memo Requests
+
+| **Step** | **SAP Object** | **API Documentation** | **Power Automate Flow** |
+|----------|----------------|-----------------------|-------------------------|
+| Create Sales Order (VA01) | Sales Order | [Sales Order (A2X)](https://{host}:{port}/sap/opu/odata/sap Goods (VL01N) | Outbound Delivery | Outbound Delivery (A2X) | Create Outbound Delivery Flow |
+| Billing the Sales Order (VF01) | Billing Document | Billing Document (A2X) | Create Billing Document Flow |
+| Release Billing Document to FI Accounting (VF02) | Billing Document | [Billing Document (A2X)] | Invoice | Invoice | [Check Invoice Flow]
+| Process Incoming Payment (F-28) | Incoming Payment | [Incoming Payment]| Purchase Requisition | Purchase Requisition | [Create Purchase Requisition Flow](link-to-powerhase Order | Purchase Order | [Purchase Order]| [Material Document] | Goods Receipt Flow |
+| Create Supplier Invoice | Supplier Invoice | Supplier Invoice | Create Supplier Invoice Flow |
+| Manage Product Master Data | Product Master | [Product Master] |
+| Manage Customer Master Data | Business Partner | [Business Partner]]
+| Manage Sales Contracts | Sales Contract | [Sales Contract] |
+| Manage Customer Returns | Customer Return | [CustomerReturn | Manage Customer Returns Flow |
+| Manage Credit Memo Requests | Credit Memo Request | [Credit Memo Request] | [Debit Memo Request]
 
 ## 🚀 Why This Matters
 
