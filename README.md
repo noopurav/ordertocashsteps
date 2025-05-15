@@ -58,19 +58,20 @@ This repo includes everything needed to build and deploy intelligent agents that
 
 | **SAP Object** | **API Documentation** | **Power Automate Flow** |
 |----------------|-----------------------|-------------------------|
-| Sales Order | Sales Order (A2X)[https://github.com/noopurav/ordertocashsteps/edit/main/README.md#create-sales-ordercreate-sales-order] | Create Sales Order |
-| Billing Document | Billing Document[https://github.com/noopurav/ordertocashsteps/edit/main/README.md#billing-the-sales-order-vf01] | Create Billing Document Flow |
-| OutBound Delivery | OutBound Delivery[https://github.com/noopurav/ordertocashsteps/edit/main/README.md#deliver-the-goods-vl01n] | Create OutBound Delivery |
-| Purchase Requisition | Purchase Requistion (https://github.com/noopurav/ordertocashsteps/edit/main/README.md#purchase-requisition)] |  | 
-| Purchase Order | Purchase Order(https://github.com/noopurav/ordertocashsteps/edit/main/README.md#create-purchase-order) | [Material Document] 
-| Goods Receipt |  Goods Receipt ( https://github.com/noopurav/ordertocashsteps/edit/main/README.md#goods-receipt  )   |          |
-| Supplier Invoice | Supplier Invoice ( https://github.com/noopurav/ordertocashsteps/edit/main/README.md#supplier-invoice ) | Create Supplier Invoice Flow |
-| Product Master | Product Master(https://github.com/noopurav/ordertocashsteps/edit/main/README.md#manage-product-master-data) |       |
-| Customer Master | Business Partner (https://github.com/noopurav/ordertocashsteps/edit/main/README.md#manage-customer-master-data) |       |
-| Sales Contract | Sales Contract (https://github.com/noopurav/ordertocashsteps/edit/main/README.md#manage-customer-master-data) |
-| Customer Return | CustomerReturn (https://github.com/noopurav/ordertocashsteps/edit/main/README.md#-manage-customer-returns) |   |
-| Credit Memo Request | Credit Memo Request (https://github.com/noopurav/ordertocashsteps/edit/main/README.md#manage-credit-memo-requests)  |    |
-| Debit Memo Request | CreateDebit Memo Request (https://github.com/noopurav/ordertocashsteps/edit/main/README.md#manage-debit-memo-requests) |   |
+| Sales Order | [Sales Order](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#create-sales-order) | Create Sales Order |
+| OutBound Delivery | [OutBound Delivery](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#deliver-the-goods-vl01n) | Create OutBound Delivery |
+| Billing Document | [Billing Document](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#billing-the-sales-order-vf01) | Create Billing Document Flow |
+| Releasing Billing to Accounting | [Release Billing Document](https://github.com/noopurav/ordertocashsteps/tree/main#release-billing-document-to-fi-accounting-vf02) | Create Billing Document Flow |
+| Purchase Requisition | [Purchase Requistion](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#purchase-requisition) |  | 
+| Purchase Order | [Purchase Order](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#create-purchase-order) | [Material Document] 
+| Goods Receipt |  [Goods Receipt](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#goods-receipt )   |          |
+| Supplier Invoice | [Supplier Invoice]( https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#supplier-invoice) | Create Supplier Invoice Flow |
+| Product Master | [Product Master](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#manage-product-master-data) |       |
+| Customer Master |[ Business Partner](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#manage-customer-master-dat) |       |
+| Sales Contract | [Sales Contract](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#manage-sales-contracts) |
+| Customer Return | [CustomerReturn](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#-manage-customer-returns) |   |
+| Credit Memo Request | [Credit Memo Request](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#manage-credit-memo-requests)  |    |
+| Debit Memo Request | [CreateDebit Memo Request](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#manage-debit-memo-requests) |   |
 
 
 ## 🚀 Why This Matters
