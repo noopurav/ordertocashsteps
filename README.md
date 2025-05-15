@@ -1,13 +1,4 @@
-# 🤖 Making SAP Transactions Accessible for Autonomous Agents Using OData APIs and Copilot Studio
-
-## 🌐 Why APIs Matter for Autonomous Agents and Beyond:
-
-As agents become more autonomous, their ability to interact with enterprise systems through **APIs** has become not just beneficial—but essential. This repository demonstrates how to make **SAP transactions accessible to agents** using a combination of the **Power Platform**, **Copilot Studio**, **Azure AI Foundry**, and **SAP OData APIs**.
-
-In traditional automation setups, **connectors** were used to bridge systems. These connectors often relied on **predefined input fields** that required manual data entry or mappings. While effective for simple workflows, this model breaks down in the context of autonomous agents. Agents are not designed to manually fill out forms or input fields. Instead, they require:
-
-- **Standardized templates** for communication.
-- The ability for **dynamic request generation** based on context and reasoning.
+# 🤖 Making SAP Transactions Accessible Using OData APIs for Autonomous Agents and more on Power Platform.
 
 ### Why APIs and OData?
 
@@ -26,6 +17,17 @@ APIs provide a **consistent interface** for interacting with complex systems lik
 - **Flexibility**: Suitable for various application types.
 
 By leveraging SAP OData APIs, developers can create robust, scalable applications that meet modern enterprise needs.
+
+
+## 🌐 Why APIs Matter for Autonomous Agents and Beyond:
+
+As agents become more autonomous, their ability to interact with enterprise systems through **APIs** has become not just beneficial—but essential. This repository demonstrates how to make **SAP transactions accessible to agents** using a combination of the **Power Platform**, **Copilot Studio**, **Azure AI Foundry**, and **SAP OData APIs**.
+
+In traditional automation setups, **connectors** were used to bridge systems. These connectors often relied on **predefined input fields** that required manual data entry or mappings. While effective for simple workflows, this model breaks down in the context of autonomous agents. Agents are not designed to manually fill out forms or input fields. Instead, they require:
+
+- **Standardized templates** for communication.
+- The ability for **dynamic request generation** based on context and reasoning.
+
 
 
 ## 📦 What's in This Repository
@@ -48,13 +50,27 @@ This repo includes everything needed to build and deploy intelligent agents that
 - **Copilot Studio Agent Project**  
   A ready-to-use Copilot Studio project that demonstrates:
   - How to trigger flows using natural language or events
+  - How using OData APIs make SAP transactions more easiliy accessible for Agents.
   - How to use new AI features like reasoning and memory
   - How to orchestrate actions across Microsoft 365 and SAP to save time and automate business processes
   - Instructions on how to create it.
 
----
-## Table of Contents
 
+## 🚀 Why This Matters
+
+By combining the Power Platform, OpenAI, and SAP OData APIs, this solution enables:
+
+- Seamless integration between communication tools (like Outlook and Teams) and ERP systems  
+- Agents that can reason, decide, and act—without manual intervention  
+- A scalable foundation for building intelligent business process automation
+
+
+
+
+
+
+
+# SAP APIs from Buisness Accelerator Hub:
 
 | **SAP Object** | **API Documentation** | **Power Automate Flow** |
 |----------------|-----------------------|-------------------------|
@@ -72,29 +88,6 @@ This repo includes everything needed to build and deploy intelligent agents that
 | Customer Return | [CustomerReturn](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#-manage-customer-returns) |   |
 | Credit Memo Request | [Credit Memo Request](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#manage-credit-memo-requests)  |    |
 | Debit Memo Request | [CreateDebit Memo Request](https://github.com/noopurav/ordertocashsteps/tree/main?tab=readme-ov-file#manage-debit-memo-requests) |   |
-
-
-## 🚀 Why This Matters
-
-By combining the Power Platform, OpenAI, and SAP OData APIs, this solution enables:
-
-- Seamless integration between communication tools (like Outlook and Teams) and ERP systems  
-- Agents that can reason, decide, and act—without manual intervention  
-- A scalable foundation for building intelligent business process automation
-
-
-
-
-
-
-
-
-# SAP APIs from Buisness Accelerator Hub:
-
-
-
-# 'Order to Cash' process
-This documentation outlines some basic steps in the Order to Cash process (inspired by [this](https://community.sap.com/t5/enterprise-resource-planning-blogs-by-sap/step-by-step-to-run-a-simple-order-to-cash-process/ba-p/13439388) guide). The goal is to get you started with the relevant SAP OData Calls, but then also to provide you with samples that you can import in Power Automate and Copilot Studio to quickly get you started!
 
 
 ## Create Sales Order{#create-sales-order}
@@ -147,10 +140,6 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 ```
 
 ![Created Sales Order in the SAP System VA03](images/CreatedSalesOrder-VA03.jpg)
-
-#### Sample Power Automate Flow
-
-(INSERT LINK TO ACTION)/ Image
 
 
 ## Deliver the goods (VL01N)
@@ -259,8 +248,6 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 Parameter:  BillingDocument: {{Billing Document Number }}
 
 ```
-
-# 'Procure to Pay' process
 
 ##  Purchase Requisition
 
