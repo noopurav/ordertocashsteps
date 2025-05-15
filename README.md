@@ -259,10 +259,6 @@ Parameter:  BillingDocument: {{Billing Document Number }}
 
 ```
 
-## Check The Invoice (FB03)
-
-## Process Incoming Payment (F-28)
-
 # 'Procure to Pay' process
 
 ##  Purchase Requisition
@@ -1186,10 +1182,6 @@ X-CSRF-Token: {{FetchReply.response.headers.x-csrf-token}}
 
 ## Manage Project Billing – Project Billing Request
 
-
-
-
-( for manage add delete, update?)
 
 
 
